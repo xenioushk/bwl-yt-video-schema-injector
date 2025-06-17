@@ -1,0 +1,126 @@
+/*------------------------------------ 07. LOGOS  BLOCK ------------------------------------*/
+
+.section-client-logo {
+  clear: both;
+}
+
+.logo-layout-1 {
+  .client-logo {
+    border: 1px solid #ebebeb;
+    background: $bg-white;
+    margin-bottom: 0px;
+
+    img {
+      width: 100%;
+      margin: 0;
+      opacity: 0.6;
+      display: block;
+      @include round(0, true);
+      @include transition();
+    }
+
+    &:hover {
+      border: 1px solid $primary-color;
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.logo-items .logo-container {
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 100%;
+}
+
+.logo-items {
+  // Navigation
+  .owl-nav {
+    opacity: 0.6;
+    margin: 0;
+    z-index: 1;
+    @include transition();
+
+    [class*="owl-"] {
+      color: #fff;
+      font-size: 14px;
+      margin: 5px;
+      padding: 4px 7px;
+      background: #d6d6d6;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .owl-prev {
+      left: -3%;
+      position: absolute;
+      padding: 0;
+      top: 50%;
+      width: 42px;
+      font-size: 48px;
+      height: 48px;
+      margin-top: -24px;
+      color: $primary-color;
+      background: transparent;
+      text-align: left;
+      @include transition();
+      &:hover {
+        color: #5c96bb;
+      }
+    }
+
+    .owl-next {
+      right: -3%;
+      position: absolute;
+      padding: 0;
+      top: 50%;
+      width: 42px;
+      font-size: 48px;
+      height: 48px;
+      margin-top: -24px;
+      color: $primary-color;
+      background: transparent;
+      text-align: right;
+      @include transition();
+      &:hover {
+        color: #5c96bb;
+      }
+    }
+  }
+
+  &:hover .owl-nav {
+    opacity: 1;
+  }
+
+  // Dots.
+  .owl-dots {
+    text-align: center;
+    .owl-dot {
+      display: inline-block;
+      padding: 4px;
+      width: 22px;
+      height: 11px;
+      background: transparent;
+      border: 1px solid #cccccc;
+      margin: 0 4px;
+
+      span {
+        display: block;
+        background: #254559;
+      }
+    }
+
+    .active span {
+      padding: 0px;
+      width: 16px;
+      height: 5px;
+      background: $primary-color;
+      position: relative;
+      left: -2px;
+      margin-right: 4px;
+      top: -2px;
+    }
+  }
+}

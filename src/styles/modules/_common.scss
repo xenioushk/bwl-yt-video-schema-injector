@@ -1,0 +1,214 @@
+/*------------------------------------ 00. COMMON CLASS ------------------------------------*/
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.margin-bottom-42 {
+  margin-bottom: 42px !important;
+}
+
+.margin-reverse-top {
+  margin-top: -270px;
+  margin-bottom: 42px;
+}
+
+.padding-reverse-bottom {
+  padding-bottom: 200px;
+}
+
+@-webkit-keyframes pulse-effect {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0);
+  }
+  20% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0.3);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0.5);
+  }
+  80% {
+    -webkit-box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0);
+  }
+}
+
+@keyframes pulse-effect {
+  0% {
+    -moz-box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+    box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+  }
+  20% {
+    -moz-box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+    box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+  }
+  50% {
+    -moz-box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.5);
+    box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.5);
+  }
+  80% {
+    -moz-box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+    box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+    box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+  }
+}
+
+@-webkit-keyframes pulse-effect {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0);
+  }
+  20% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0.3);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0.5);
+  }
+  80% {
+    -webkit-box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(242, 87, 100, 0);
+  }
+}
+
+@keyframes pulse-effect {
+  0% {
+    -moz-box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+    box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+  }
+  20% {
+    -moz-box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+    box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+  }
+  50% {
+    -moz-box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.5);
+    box-shadow: 0 0 0 15px rgba(242, 87, 100, 0.5);
+  }
+  80% {
+    -moz-box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+    box-shadow: 0 0 0 10px rgba(242, 87, 100, 0.3);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+    box-shadow: 0 0 0 5px rgba(242, 87, 100, 0);
+  }
+}
+
+/*----- CUSTOM MARGIN ----*/
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
+}
+
+.margin-top-12 {
+  margin-top: 12px !important;
+}
+
+.margin-top-24 {
+  margin-top: 24px !important;
+}
+
+.margin-top-32 {
+  margin-top: 32px !important;
+}
+
+.margin-top-90 {
+  margin-top: 90px !important;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+
+.margin-bottom-12 {
+  margin-bottom: 12px !important;
+}
+
+.margin-bottom-24 {
+  margin-bottom: 24px !important;
+}
+
+.margin-bottom-32 {
+  margin-bottom: 32px !important;
+}
+
+.margin-bottom-80 {
+  margin-bottom: 80px;
+}
+
+.margin-right-0 {
+  margin-right: 0px;
+}
+
+/*----- CUSTOM PADDING ----*/
+
+.no-gutter [class^="col-"] {
+  padding: 0px;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-left-0 {
+  padding-left: 0px;
+}
+
+.padding-right-0 {
+  padding-right: 0px;
+}
+
+.padding-right-5 {
+  padding-right: 5px;
+}
+
+.padding-right-11 {
+  padding-right: 11px;
+}
+
+hr.custom-line {
+  border: 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/*----- Custom Box Shadow  ----*/
+
+.theme-custom-box-shadow {
+  border: 0px solid transparent;
+  position: relative;
+  top: 0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.07);
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.theme-custom-box-shadow:hover {
+  border: 0px solid transparent;
+  top: -3px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.about-us-header {
+  background-image: url("../images/our_mission_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-heading-bold {
+  position: relative;
+  font-size: 32px;
+  margin-bottom: 48px;
+  line-height: 48px;
+}

@@ -1,0 +1,72 @@
+/*-- 04.1 COUNTER LAYOUT 01 ---*/
+
+.section-counter {
+  clear: both;
+}
+
+.counter-block-1 {
+  clear: both;
+  padding: 32px 24px 32px 24px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.counter-block-1 .icon {
+  color: #444444;
+  float: left;
+  font-size: 36px;
+  margin: 18px 18px 0 0;
+}
+
+.counter-block-1 .count-info {
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.counter-block-1 .counter {
+  margin-top: 24px;
+  font-size: 36px;
+  line-height: 42px;
+  color: #40c1f0;
+  font-weight: 700;
+}
+
+.counter-block-1 h4 {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #7c7c7c;
+  letter-spacing: 0em;
+  margin-bottom: 0px;
+}
+
+/*-- 04.2 COUNTER LAYOUT 02 ---*/
+
+.counter-block-2 {
+  clear: both;
+}
+
+.counter-block-2 .icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 24px;
+  color: #444444;
+}
+
+.counter-block-2 .counter {
+  margin-top: 24px;
+  font-size: 36px;
+  line-height: 42px;
+  color: #40c1f0;
+  font-weight: 700;
+}
+
+.counter-block-2 h4 {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}

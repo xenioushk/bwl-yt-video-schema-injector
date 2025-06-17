@@ -1,0 +1,48 @@
+#backTop {
+  width: 16px;
+  height: 16px;
+  padding: 10px;
+  border-radius: 0px;
+  font-size: 0px;
+  line-height: 0px;
+  cursor: pointer;
+  z-index: 999999999;
+  display: none;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+#backTop:hover {
+  opacity: 1;
+}
+
+#backTop:after {
+  position: absolute;
+  content: "-";
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  color: $light-text-color;
+}
+
+#backTop.custom {
+  background-color: #40c1f0;
+  background-image: url("../images/uparr-48-b.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: 0px;
+  @include transition();
+
+  &:hover {
+    background-color: $bg-white;
+    border: 0px;
+  }
+}

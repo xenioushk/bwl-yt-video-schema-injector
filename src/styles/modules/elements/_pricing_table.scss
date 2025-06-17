@@ -1,0 +1,148 @@
+/*------------------------------------ 13. PRICE TABLE BLOCK------------------------------------*/
+
+.kdesk-pricing-container {
+  background-color: #f1f1f1;
+  border: 0px solid #eee;
+  box-sizing: border-box;
+  padding: 48px 32px;
+  position: relative;
+  margin: 24px 0 0 0;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.kdesk-pricing-container .plan-title {
+  margin-top: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+
+.kdesk-pricing-container .kdesk-pricing-info {
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 11px;
+}
+
+.kdesk-pricing-container .kdesk-pricing-info .plan-currency {
+  color: #40c1f0;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 500;
+  position: relative;
+  top: -8px;
+}
+
+.kdesk-pricing-container .kdesk-pricing-info .plan-price {
+  color: #40c1f0;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.kdesk-pricing-container .kdesk-pricing-info .plan-period {
+  color: #5a5a5a;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-top: 0px;
+  text-transform: uppercase;
+  position: relative;
+  top: -3px;
+}
+
+.kdesk-pricing-container .kdesk-pricing-container-details {
+  margin-bottom: 28px;
+  color: #2c2c2c;
+}
+
+.kdesk-pricing-container .price-table-item {
+  list-style: none;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  color: #2c2c2c;
+}
+
+.kdesk-pricing-container .price-table-item li {
+  line-height: 42px;
+  font-size: 18px;
+  border-bottom: 1px solid #fafafa;
+  padding: 6px 0;
+}
+
+.kdesk-pricing-container .price-table-item li:last-child {
+  border-bottom: 0px;
+}
+
+.kdesk-pricing-container a.kdesk-price-plan-btn {
+  border: 0px solid #40c1f0;
+  padding: 12px 32px;
+}
+
+.kdesk-pricing-container .price-table-item {
+  color: #5a5a5a;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/*-----  Featured Block ----*/
+
+.kdesk-pricing-highlight {
+  background: #40c1f0;
+}
+
+.kdesk-pricing-highlight .plan-title {
+  color: inherit;
+}
+
+.kdesk-pricing-highlight .kdesk-pricing-info .plan-period {
+  color: inherit;
+}
+
+.kdesk-pricing-highlight .kdesk-pricing-info .plan-currency {
+  color: #fff;
+}
+
+.kdesk-pricing-highlight .kdesk-pricing-info .plan-price {
+  color: #fff;
+}
+
+.kdesk-pricing-container.kdesk-pricing-highlight .price-table-item {
+  color: #ffffff;
+}
+
+.kdesk-pricing-container.kdesk-pricing-highlight .price-table-item li {
+  border-color: #12ade9;
+}
+
+.kdesk-pricing-highlight a.kdesk-price-plan-btn {
+  background: #ffffff;
+  color: #40c1f0;
+  border: 0px solid #40c1f0;
+}
+
+.kdesk-pricing-highlight:hover a.kdesk-price-plan-btn {
+  background: #40c1f0;
+  color: #ffffff;
+  border: 0px solid #ffffff;
+}
+
+.kdesk-no-padding-pricing-column {
+  padding: 0px !important;
+}
+
+.kdesk-no-padding-pricing-column:first-child {
+  padding-left: 15px !important;
+}
+
+.kdesk-no-padding-pricing-column:last-child {
+  padding-right: 15px !important;
+}
+
+.kdesk-no-padding-pricing-column .kdesk-pricing-container {
+  border: 0px solid #fff !important;
+}

@@ -1,0 +1,226 @@
+@import "layout_1";
+@import "layout_2";
+@import "version_layout";
+
+.section-portfolio-block {
+  clear: both;
+}
+
+.portfolio-col-pad {
+  padding: 12px 12px 12px 12px !important;
+}
+
+.portfolio-container {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.05);
+  figure {
+    margin: 0;
+  }
+
+  .portfolio-img {
+    display: block;
+
+    .portfolio-img-container {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1000px;
+        background: $primary-color;
+        opacity: 0.1;
+        top: 0;
+        left: 0;
+        transform: scale(0);
+        @include transition(all 0.3s);
+      }
+    }
+  }
+}
+.portfolio-container figcaption.portfolio-title {
+  position: absolute;
+  width: 100%;
+  background: $primary-color;
+  left: 0;
+  bottom: -20%;
+  opacity: 0;
+  margin: 0;
+  line-height: 24px;
+  padding: 12px 6px;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  @include transition(all 0.6s);
+}
+
+/*-----  Portfolio Hover Effect ----*/
+
+.portfolio-container:hover figcaption.portfolio-title {
+  background: #fafafa;
+  opacity: 1;
+  bottom: 0;
+}
+
+.portfolio-container:hover .portfolio-img .portfolio-img-container:before {
+  background: $primary-color;
+  opacity: 0.7;
+  transform: scale(1);
+  width: 100%;
+  height: 1000px;
+}
+
+.no-bottom-padding {
+  padding-bottom: 0px;
+}
+
+.no-padding-portfolio .portfolio-container {
+  padding: 0px;
+  margin: 0;
+}
+
+.kdesk-portfolio {
+  clear: both;
+}
+
+.kdesk-portfolio .filter-items {
+  text-align: center;
+  margin-bottom: 24px !important;
+  clear: both;
+}
+
+.kdesk-portfolio .filter-items button {
+  @include round(0px);
+  margin: 6px 4px 6px;
+  border: 1px solid #cccccc;
+}
+
+.kdesk-portfolio .filter-items button.active {
+  background: $primary-color;
+  color: $text-white;
+}
+
+.kdesk-portfolio .filter-items button:last-child {
+  margin-right: 0px;
+}
+
+.kdesk-portfolio .filter-items button:hover {
+  background: $primary-color;
+  color: $text-white;
+}
+
+.portfolio-next-posts a,
+.portfolio-prev-posts a {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 32px;
+  border: 1px solid #f1f1f1;
+  padding: 6px 16px;
+  background: #eeeeee;
+  @include transition();
+}
+
+.portfolio-next-posts a:hover,
+.portfolio-prev-posts a:hover {
+  border: 1px solid #cccccc;
+  color: #5a5a5a;
+  background: #fafafa;
+}
+
+/*----- Portfolio Caoursel ----*/
+
+.kdesk-portfolio-container [class^="col-"] {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.kdesk-portfolio-container .owl-nav {
+  @include transition();
+  margin: 0;
+  z-index: 1;
+}
+
+.kdesk-portfolio-container .owl-nav [class*="owl-"] {
+  color: #fff;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #d6d6d6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.kdesk-portfolio-container .owl-nav .owl-prev {
+  left: -3%;
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  width: 42px;
+  font-size: 48px;
+  height: 48px;
+  margin-top: -24px;
+  color: #13b4ef;
+  background: transparent;
+  text-align: left;
+  @include transition();
+}
+
+.kdesk-portfolio-container .owl-nav .owl-prev:hover {
+  color: #5c96bb;
+}
+
+.kdesk-portfolio-container .owl-nav .owl-next {
+  right: -3%;
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  width: 42px;
+  font-size: 48px;
+  height: 48px;
+  margin-top: -24px;
+  color: #13b4ef;
+  background: transparent;
+
+  text-align: right;
+  @include transition();
+}
+
+.kdesk-portfolio-container .owl-nav .owl-next:hover {
+  color: #5c96bb;
+}
+
+.kdesk-portfolio-container .owl-dots {
+  margin: 24px 0 0 0;
+  text-align: center;
+}
+
+.kdesk-portfolio-container .owl-dots .owl-dot {
+  display: inline-block;
+  padding: 4px;
+  width: 20px;
+  height: 11px;
+  background: transparent;
+  border: 1px solid #cccccc;
+  margin: 0 4px;
+}
+
+.kdesk-portfolio-container .owl-dots .owl-dot span {
+  display: block;
+  background: #254559;
+}
+
+.kdesk-portfolio-container .owl-dots .active span {
+  padding: 0px;
+  width: 14px;
+  height: 5px;
+  background: #13b4ef;
+  position: relative;
+  left: -2px;
+  top: -2px;
+}
+
+.kdesk-portfolio-container:hover .owl-nav {
+  opacity: 1;
+}

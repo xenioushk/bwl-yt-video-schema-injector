@@ -1,0 +1,67 @@
+a.btn-load-more {
+  color: $light-text-color !important;
+  background: $primary-color;
+  border: 1px solid $primary-color;
+  padding: 16px 32px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  @include round(0px);
+  @include transition(0.5s);
+
+  &:hover {
+    color: darken($primary-color, 10%);
+    background: #444444;
+    border: 1px solid #444444;
+  }
+}
+
+a.btn-theme {
+  border: 0px;
+  background: $primary-color;
+  color: $light-text-color !important;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  padding: 12px 24px;
+  position: relative;
+  margin-bottom: 0;
+  letter-spacing: 0em;
+  overflow: hidden;
+  @include round(4px);
+  @include transition(0.5s);
+
+  &:hover {
+    color: $light-text-color;
+    background-color: #254559;
+  }
+}
+
+a.btn-theme-invert {
+  color: $light-text-color !important;
+  background-color: #254559 !important;
+
+  &:hover {
+    background: #111111 !important;
+    color: #ffffff !important;
+  }
+}
+
+a.btn-capitalize {
+  text-transform: capitalize !important;
+}
+
+a.btn-theme-small {
+  font-weight: normal;
+  padding: 4px 16px;
+  margin: 6px 0;
+}
+
+a.btn-theme.btn-rounded {
+  @include round(32px, true);
+}
+
+a.btn-theme.btn-semi-rounded {
+  @include round(6px, true);
+}

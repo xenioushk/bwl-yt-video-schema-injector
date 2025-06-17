@@ -1,0 +1,226 @@
+//License Page.
+#bwl-theme-product-license {
+  h2:first-child {
+    border-bottom: 1px solid daken($bg-gray, 5%);
+    margin-bottom: 12px;
+  }
+
+  #loader {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 12px 0;
+
+    .verify_error {
+      color: $text-error;
+    }
+
+    .verify_success {
+      color: $text-success;
+    }
+  }
+
+  input,
+  button {
+    font-size: 16px;
+    height: 42px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+
+  #remove_license {
+    background: lighten($bg-error, 5%);
+    border-color: lighten($bg-error, 5%);
+    &:hover {
+      background: $bg-error;
+    }
+  }
+
+  // F.A.Q
+
+  .license_faq_container {
+    background: $bg-white;
+    padding: 12px;
+    margin-top: 24px;
+  }
+
+  h3.license_faq_title {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  ul.license_faqs {
+    text-align: left;
+
+    li {
+      .question {
+        font-weight: bold;
+        font-size: 16px;
+        border-left: 6px solid $bg-success;
+        padding: 0 6px;
+      }
+
+      .answer {
+        font-weight: normal;
+        padding: 0 6px;
+      }
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// License Activation Meta Link.
+
+.bwl_dn {
+  display: none;
+}
+
+a.bwl_activation_link {
+  font-weight: bold;
+  color: $text-success;
+}
+
+a.bwl_activation_meta_link {
+  font-weight: bold;
+  color: $text-error;
+}
+
+// License Menu Tag.
+
+span.bwl-license-activation-tag {
+  border-radius: 2px;
+  position: relative;
+  margin-left: 4px;
+  padding: 0 3px;
+  font-size: 9px;
+  font-weight: bold;
+  top: 0px;
+
+  &.activated {
+    background: $bg-white;
+    color: $text-success;
+  }
+
+  &.inactive {
+    background: $bg-white;
+    color: $text-error;
+  }
+}
+
+// License Form.
+
+.license_form_container,
+.license_info_container {
+  background: $bg-white;
+  padding: 24px;
+  h3 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  h4 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+}
+
+.license_form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    color: $text-success;
+  }
+  #purchase_code {
+    width: 450px;
+    max-width: 100%;
+    height: 42px;
+    line-height: 32px;
+    padding: 0 12px;
+  }
+
+  &__youtube_link {
+    font-weight: bold;
+    a {
+      text-decoration: none;
+
+      .dashicons-youtube {
+        color: $text-error;
+      }
+    }
+  }
+}
+
+.license_info_container {
+  a.button {
+    font-size: 16px;
+    height: 42px;
+    line-height: 40px;
+    font-weight: bold;
+    padding: 0 24px;
+    background: $bg-success;
+    &:hover {
+      background: darken($bg-gray, 100%);
+    }
+  }
+}
+
+// Purchase Info.
+
+.plugin_purchase_info {
+  font-size: 16px;
+
+  li {
+    line-height: 28px;
+    display: flex;
+    gap: 12px 0;
+
+    strong {
+      flex-basis: 120px;
+    }
+
+    .support-valid {
+      background: $bg-success;
+      color: $light-text-color;
+      margin-left: 6px;
+      border-radius: 4px;
+      padding: 0 10px;
+      font-weight: bold;
+      line-height: 24px;
+    }
+
+    .support-expired {
+      background: $bg-error;
+      color: $light-text-color;
+      margin-left: 6px;
+      border-radius: 4px;
+      padding: 0 10px;
+      font-weight: bold;
+      line-height: 24px;
+    }
+  }
+}
+
+// Offline line verfication.
+
+.offline-msg {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+#offline_verify_purchase {
+  text-align: center;
+
+  textarea {
+    display: block;
+  }
+
+  #offline_verify {
+    margin: 14px 0 0 0;
+    width: 130px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: normal;
+  }
+}

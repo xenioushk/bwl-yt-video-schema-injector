@@ -1,0 +1,77 @@
+/*-----  17. VIDEO BLOCK ----*/
+
+.video-box-layout-1 {
+  display: block;
+  padding: 0px 0px 0px;
+}
+
+.video-box-layout-1 .video-box-container {
+  overflow: hidden;
+  position: relative;
+  /*min-height: 440px;*/
+}
+
+.video-box-layout-1 .video-box-container:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3000px;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.video-box-layout-1 .video-box-container:after {
+  color: #343434;
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f04b";
+  width: 110px;
+  height: 110px;
+  line-height: 102px;
+  font-size: 42px;
+  top: 50%;
+  left: 50%;
+  margin-left: -55px;
+  margin-top: -55px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  text-align: center;
+  text-indent: 5px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  border: 5px solid #40c1f0;
+}
+
+.video-box-layout-1 .video-box-container img {
+  display: block;
+  width: 100%;
+}
+
+.video-box-layout-1 .video-box-container:hover:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3000px;
+  background: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+}
+
+.video-box-layout-1 .video-box-container:hover:after {
+  color: #111111;
+  background: rgba(255, 255, 255, 0.7);
+  border: 5px solid #333333;
+}

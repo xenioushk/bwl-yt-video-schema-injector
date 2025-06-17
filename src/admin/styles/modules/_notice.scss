@@ -1,0 +1,44 @@
+.baf_notice_text {
+  color: inherit;
+
+  &--success {
+    color: $text-success;
+  }
+
+  &--danger {
+    color: $text-error;
+  }
+
+  &--warning {
+    color: $text-warning;
+  }
+}
+
+.bwl_theme_notice_text {
+  color: inherit;
+  line-height: 24px;
+
+  a {
+    text-decoration: none;
+  }
+
+  &--success {
+    color: $text-success;
+  }
+
+  &--danger {
+    color: $text-error;
+  }
+
+  &--warning {
+    color: $text-warning;
+  }
+
+  &--gray {
+    color: darken($light-text-color, 30%);
+  }
+
+  &--bold {
+    font-weight: map-get($font-weights, bold);
+  }
+}

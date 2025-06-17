@@ -1,0 +1,209 @@
+<?php
+namespace BwlFaqManager\Controllers\OptionsPanel;
+
+use BwlFaqManager\Callbacks\OptionsPanel\SettingsPageCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\FontFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\VoteFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\ThemeFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\GeneralFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\FormFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\ReadingFieldsCb;
+use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\AdvancedFieldsCb;
+
+/**
+ * Class for the plugin settings page.
+ *
+ * @package BwlFaqManager
+ * @since: 1.0.0
+ */
+class SettingsPage {
+
+    /**
+     * Plugin options id.
+     *
+     * @note: Must be unqiue, and we will fetch data using this id.
+     * @var string
+     */
+    public $options_id = BAF_OPTIONS_ID;
+
+    /**
+     * Plugin page id.
+     *
+     * @note: Must be unique.
+     * @var string
+     */
+    public $options_page_id = 'bwl-advanced-faq-settings';
+
+    /**
+     * Settings fields.
+     *
+     * @var array
+     */
+    public $settings_fields = [];
+
+    /**
+     * Register the settings page and fields
+     */
+	public function register() {
+        $this->initialize();
+	}
+
+    /**
+     * Initialize the settings page and fields
+     */
+    public function initialize() {
+        // Initialize the settings page.
+        add_action( 'admin_menu',  [ $this, 'register_options_page' ] );
+		add_action( 'admin_init',  [ $this, 'register_settings_fields' ] );
+    }
+
+    /**
+     * Register options page to the parent menu.
+     * For this we are going to add the submenu page to the BWL Advanced FAQ menu.
+     */
+	public function register_options_page() {
+		// Initalize Callbacks.
+		$settings_page_cb = new SettingsPageCb();
+
+		add_submenu_page(
+            'edit.php?post_type=' . BAF_POST_TYPE,
+            'BWL Advanced FAQ Manager Settings',
+            BAF_S_FAQ_TEXT . ' Settings',
+            'manage_options',
+            $this->options_page_id,
+            [ $settings_page_cb, 'load_template' ]
+		);
+	}
+
+    /**
+     * Display the settings section
+     */
+	public function faqftw_display_section_cb() {
+        return '';
+	}
+
+    /**
+     * Register the options group
+     */
+    public function register_options_group() {
+        // We will keep the group name same as the options id.
+        // This group name should be the into the settings_page_tpl.php file
+        // settings_fields( $options_id ); // Matches the group name.
+		register_setting( $this->options_id, $this->options_id );
+    }
+
+    /**
+     * Register the settings fields
+     *
+     * @note: Register sections here.
+     */
+	public function register_settings_fields() {
+
+        // Register Options Group.
+        $this->register_options_group();
+
+        // Register Sections.
+        // You can register multiple sections here.
+        // Each section must be an array with a unique id.
+        $sections = [
+            'baf_general_section' => [
+				'title'    => esc_html__( 'General Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+            ],
+			'baf_form_section' => [
+				'title'    => esc_html__( 'External FAQ Form Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+			],
+            'baf_vote_section' => [
+				'title'    => esc_html__( 'Vote Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+            ],
+            'baf_font_section' => [
+				'title'    => esc_html__( 'Font Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+            ],
+            'baf_theme_section' => [
+				'title'    => esc_html__( 'Custom Theme Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+            ],
+			'baf_reading_section' => [
+				'title'    => esc_html__( 'Reading Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+			],
+			'baf_advanced_section' => [
+				'title'    => esc_html__( 'Advanced Settings', 'baf-faqtfw' ),
+				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
+			],
+        ];
+
+        foreach ( $sections as $section_id => $section ) {
+            add_settings_section(
+                $section_id,
+                $section['title'],
+                $section['callback'],
+                $this->options_page_id
+            );
+            $this->register_fields( $section_id );
+        }
+	}
+
+    /**
+     * Set the fields for the settings page
+     *
+     * @param string $section_id The section id to get the fields from.
+     * @note: Add a new case for new section. Also register callback function for the new section.
+     *
+     * @return array The fields for the settings page.
+     */
+    public function get_fields( $section_id ) {
+        switch ( $section_id ) {
+
+            case 'baf_general_section':
+                return ( new GeneralFieldsCb() )->get_fields();
+            case 'baf_form_section':
+                return ( new FormFieldsCb() )->get_fields();
+            case 'baf_vote_section':
+                return ( new VoteFieldsCb() )->get_fields();
+            case 'baf_font_section':
+                return ( new FontFieldsCb() )->get_fields();
+            case 'baf_theme_section':
+                return ( new ThemeFieldsCb() )->get_fields();
+            case 'baf_reading_section':
+                return ( new ReadingFieldsCb() )->get_fields();
+            case 'baf_advanced_section':
+                return ( new AdvancedFieldsCb() )->get_fields();
+			default:
+                return [];
+        }
+    }
+
+    /**
+     * Register the fields for the settings page
+     *
+     * @param string $section_id The section id to register the fields to.
+     * @note: No need to change this function.
+     */
+    public function register_fields( $section_id = '' ) {
+
+        if ( empty( $section_id ) ) {
+            return;
+        }
+
+        $settings_fields = $this->get_fields( $section_id );
+
+        if ( empty( $settings_fields ) ) {
+            echo "Empty settings fields for section: {$section_id}"; //phpcs:ignore
+            exit();
+        }
+
+		foreach ( $settings_fields as $id => $field ) {
+			add_settings_field(
+				$id,
+				$field['title'],
+				$field['callback'],
+				$this->options_page_id,
+				$section_id,
+			);
+		}
+    }
+}

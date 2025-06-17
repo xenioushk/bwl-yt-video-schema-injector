@@ -1,0 +1,107 @@
+// BWL Product List Card.
+
+.bwl-product-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: $bg-white;
+  @include round(4px);
+  @include box-shadow(0px, 0px, 5px, rgba(0, 0, 0, 0.3));
+  @include transition;
+
+  &:hover {
+    background: darken($text-white, 2%);
+    @include box-shadow(0px, 0px, 14px, rgba(0, 0, 0, 0.3));
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    font-weight: get-font-weight(bold);
+  }
+
+  &__version {
+    display: inline-block;
+    padding: 0 12px;
+    color: $text-white;
+    background: #333;
+    margin: 0 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0 12px;
+    flex-grow: 1;
+  }
+
+  &__price {
+    /* Regular Price */
+    &--reg {
+      text-decoration: line-through;
+      color: $text-gray;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    /* New Price */
+    &--new {
+      color: $text-success;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    /* Discount Badge */
+    &--badge {
+      background-color: $bg-red;
+      color: $text-white;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 3px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0 12px;
+    border-top: 1px solid $border-gray;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    flex-grow: 1;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    @include round(4px);
+    @include box-shadow();
+    color: #333;
+    @include transition(all, 0.3s);
+
+    &--download {
+      background: lighten($bg-green, 10%) !important;
+      color: $text-white;
+      &:hover {
+        background: lighten($bg-green, 5%) !important;
+        color: $text-white;
+      }
+    }
+
+    &--documentation {
+      background: lighten($bg-blue, 10%) !important;
+      &:hover {
+        background: lighten($bg-blue, 5%) !important;
+      }
+    }
+  }
+}
