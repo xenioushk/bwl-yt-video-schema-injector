@@ -22,17 +22,23 @@ class YtSchemaInjectorCb {
 		$content = $post->post_content;
 
 		// Match YouTube URLs
-		preg_match_all( '#https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w\-]{11})#', $content, $matches );
+		preg_match_all( '#https?://(?:www\.)?(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([\w\-]{11})#', $content, $matches );
 
 		if ( empty( $matches[1] ) ) { return;
 		}
 
 		$videos = [];
 
-		foreach ( $matches[1] as $video_id ) {
+		foreach ( array_unique( $matches[1] ) as $video_id ) {
+
+			$response = wp_remote_get( "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={$video_id}&format=json" );
+			$data     = json_decode( wp_remote_retrieve_body( $response ) );
+
+			$title = $data->title ?? 'YouTube Video';
+
 			$videos[] = [
 				'@type'        => 'VideoObject',
-				'name'         => 'YouTube Video', // You can replace with fetched title if using oEmbed/API
+				'name'         => $title, // You can replace with fetched title if using oEmbed/API
 				'description'  => get_the_excerpt( $post ),
 				'thumbnailUrl' => "https://img.youtube.com/vi/{$video_id}/hqdefault.jpg",
 				'uploadDate'   => get_the_date( DATE_W3C, $post ),
