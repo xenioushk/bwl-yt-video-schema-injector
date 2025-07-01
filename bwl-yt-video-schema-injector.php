@@ -28,11 +28,11 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-	/**
-	 * Function to handle the initialization of the Advanced FAQ Manager
-	 *
-	 * @return mixed
-	 */
+/**
+ * Function to handle the initialization of the Advanced FAQ Manager
+ *
+ * @return mixed
+ */
 function init_bwlytvsi() {
 
 	if ( class_exists( 'BWLYTVSI\\Init' ) ) {
