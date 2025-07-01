@@ -1,6 +1,6 @@
 variables:
   BUILD_DIR: /home/gitlab-runner/builds/$CI_RUNNER_SHORT_TOKEN/0/free-wp-plugins/bwl-yt-video-schema-injector # Adjusted
-  PLUGIN_DIR: bwl-yt-video-schema-injector # Adjusted
+  PLUGIN_DIR: wp-content/plugins/bwl-yt-video-schema-injector # Adjusted
   PDEPLOY_DIR: /home/$PHOST_ID/public_html/public_html/demos/$PLUGIN_DIR # Adjusted
 
 stages:
