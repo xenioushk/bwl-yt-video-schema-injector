@@ -25,7 +25,24 @@ class YtSchemaInjectorCb {
 	 */
 	private $post_id;
 
+	/**
+     * Get supported post types for YouTube schema injection.
+     *
+     * @return array
+     */
+	private function get_supported_post_types() {
 
+		$allowed_cpts = [
+			'post',
+			'page',
+			'product',
+			'portfolio',
+			'testimonial',
+			'bwl_kb',
+		];
+
+		return apply_filters( 'bwlytvsi_supported_post_types', $allowed_cpts );
+	}
 
 	/**
 	 * Set the YouTube API key from the options.
@@ -89,7 +106,9 @@ class YtSchemaInjectorCb {
 	 */
 	public function generate_video_schema() {
 
-		if ( ! is_singular( 'post' ) ) {
+		$supported_post_types = $this->get_supported_post_types();
+
+		if ( ! is_singular( $supported_post_types ) ) {
 			return;
 		}
 
