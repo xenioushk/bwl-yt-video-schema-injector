@@ -41,7 +41,12 @@ class YtSchemaInjectorCb {
 			'bwl_kb',
 		];
 
-		return apply_filters( 'bwlytvsi_supported_post_types', $allowed_cpts );
+		$current_cpt = get_post_type() ?? '';
+
+		$status = in_array( $current_cpt, $allowed_cpts,true );
+
+		return intval( $status );
+
 	}
 
 	/**
