@@ -10,8 +10,6 @@
     "start:hot": "wp-scripts start --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "plugin-zip": "wp-scripts plugin-zip",
-    "make-pot": "wp i18n make-pot . languages/bwl-yt-video-schema-injector.pot --slug=bwl-yt-video-schema-injector --domain=bwl-yt-video-schema-injector --exclude=node_modules,src",
-    "make-json": "wp i18n make-json languages/ --no-purge",
     "lint:php": "vendor/bin/phpcs",
     "lint:phpn": "vendor/bin/phpcs -n",
     "lint:php:fix": "vendor/bin/phpcbf"
