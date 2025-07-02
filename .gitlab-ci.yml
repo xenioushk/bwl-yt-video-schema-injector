@@ -12,9 +12,6 @@ before_script:
   - echo "👨🏻‍💻 Getting ready!!"
   - curl -sS https://getcomposer.org/installer | php -- --install-dir=$HOME/bin --filename=composer
   - export PATH="$HOME/bin:$PATH"
-  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-  - export NVM_DIR="$HOME/.nvm"
-  - source "$NVM_DIR/nvm.sh"
 
 build:
   stage: build
@@ -24,14 +21,13 @@ build:
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
-      - node_modules/
       - vendor/
   script:
     - echo "⚙️ Building the app."
     - composer install --no-dev --optimize-autoloader
   artifacts:
     paths:
-      - $BUILD_DIR/assets
+      - $BUILD_DIR/vendor
 
 production:
   stage: production
