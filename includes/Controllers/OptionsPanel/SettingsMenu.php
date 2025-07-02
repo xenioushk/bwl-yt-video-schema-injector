@@ -1,13 +1,12 @@
 <?php
-namespace KDESKADDON\Controllers\OptionsPanel;
+namespace BWLYTVSI\Controllers\OptionsPanel;
 
-use KDESKADDON\Callbacks\OptionsPanel\Pages\LicensePageCb;
-use KDESKADDON\Callbacks\OptionsPanel\Pages\OurProductsCb;
+use BWLYTVSI\Callbacks\OptionsPanel\Pages\LicensePageCb;
 
 /**
  * Class SettingsMenu
  *
- * @package KDESKADDON
+ * @package BWLYTVSI
  * @since 1.0.0
  * @author Mahbub Alam Khan
  */
@@ -28,28 +27,12 @@ class SettingsMenu {
      */
     public function get_the_sub_menu_pages() {
 
-        // License Badge
-        $license_activation_info = ( KDESKADDON_PRODUCT_VERIFIED_STATUS == 1 ) ?
-        [ 'class' => 'activated', 'text' => esc_attr__( 'ACTIVE', 'kdesk_vc' ) ] :
-        [ 'class' => 'inactive', 'text' => esc_attr__( 'INACTIVE', 'kdesk_vc' ) ];
-
-        // Sale Badge.
-        $our_products = get_option( KDESKADDON_CRON_BWL_PRODUCTS_OPTION_ID ) ?? [];
-        $sale_badge   = ! empty( $our_products ) ? '<span class="bwl-license-activation-tag inactive">Sale</span>' : '';
-
         $sub_menu_pages = [
             [
-                'page_title' => esc_attr__( 'License Page', 'kdesk_vc' ),
-                'menu_title' => esc_attr__( 'License', 'kdesk_vc' ) . '<span class="bwl-license-activation-tag ' . $license_activation_info['class'] . '">' . $license_activation_info['text'] . '</span>',
-                'menu_slug'  => 'kdesk-license-page',
+                'page_title' => esc_attr__( 'API KEY Page', 'kdesk_vc' ),
+                'menu_title' => esc_attr__( 'API KEY', 'kdesk_vc' ),
+                'menu_slug'  => 'kdesk-api-key-page',
                 'cb'         => [ ( new LicensePageCb() ), 'load_template' ],
-            ],
-            [
-				'page_title' => esc_attr__( 'More products from BlueWindLab !', 'kdesk_vc' ),
-				'menu_title' => esc_attr__( 'More Products', 'kdesk_vc' ) . $sale_badge,
-				'menu_slug'  => 'bwl-products',
-				'cb'         => [ ( new OurProductsCb() ), 'load_template' ],
-				'position'   => 121,
             ],
 
         ];
@@ -62,7 +45,7 @@ class SettingsMenu {
      */
     public function register_menu_pages() {
 
-        $parent_menu_link = 'themes.php';
+        $parent_menu_link = 'settings.php';
 
         foreach ( $this->get_the_sub_menu_pages() as $sub_page ) {
             add_submenu_page(

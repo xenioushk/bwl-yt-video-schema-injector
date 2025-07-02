@@ -140,6 +140,7 @@ class Init {
 
 		$classes = [
 			Controllers\Actions\Frontend\YtSchemaInjector::class,
+			Controllers\Actions\Admin\OptionsPanel::class,
 		];
 		return $classes;
 	}

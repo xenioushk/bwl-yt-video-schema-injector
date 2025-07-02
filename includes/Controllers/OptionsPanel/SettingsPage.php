@@ -1,19 +1,13 @@
 <?php
-namespace BwlFaqManager\Controllers\OptionsPanel;
+namespace BWLYTVSI\Controllers\OptionsPanel;
 
-use BwlFaqManager\Callbacks\OptionsPanel\SettingsPageCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\FontFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\VoteFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\ThemeFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\GeneralFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\FormFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\ReadingFieldsCb;
-use BwlFaqManager\Callbacks\OptionsPanel\FieldsSettings\AdvancedFieldsCb;
+use BWLYTVSI\Callbacks\OptionsPanel\SettingsPageCb;
+use BWLYTVSI\Callbacks\OptionsPanel\FieldsSettings\AdvancedFieldsCb;
 
 /**
  * Class for the plugin settings page.
  *
- * @package BwlFaqManager
+ * @package BWLYTVSI
  * @since: 1.0.0
  */
 class SettingsPage {
@@ -106,30 +100,6 @@ class SettingsPage {
         // You can register multiple sections here.
         // Each section must be an array with a unique id.
         $sections = [
-            'baf_general_section' => [
-				'title'    => esc_html__( 'General Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-            ],
-			'baf_form_section' => [
-				'title'    => esc_html__( 'External FAQ Form Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-			],
-            'baf_vote_section' => [
-				'title'    => esc_html__( 'Vote Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-            ],
-            'baf_font_section' => [
-				'title'    => esc_html__( 'Font Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-            ],
-            'baf_theme_section' => [
-				'title'    => esc_html__( 'Custom Theme Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-            ],
-			'baf_reading_section' => [
-				'title'    => esc_html__( 'Reading Settings', 'baf-faqtfw' ),
-				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
-			],
 			'baf_advanced_section' => [
 				'title'    => esc_html__( 'Advanced Settings', 'baf-faqtfw' ),
 				'callback' => [ $this, 'faqftw_display_section_cb' ], // change callback later.
@@ -157,19 +127,6 @@ class SettingsPage {
      */
     public function get_fields( $section_id ) {
         switch ( $section_id ) {
-
-            case 'baf_general_section':
-                return ( new GeneralFieldsCb() )->get_fields();
-            case 'baf_form_section':
-                return ( new FormFieldsCb() )->get_fields();
-            case 'baf_vote_section':
-                return ( new VoteFieldsCb() )->get_fields();
-            case 'baf_font_section':
-                return ( new FontFieldsCb() )->get_fields();
-            case 'baf_theme_section':
-                return ( new ThemeFieldsCb() )->get_fields();
-            case 'baf_reading_section':
-                return ( new ReadingFieldsCb() )->get_fields();
             case 'baf_advanced_section':
                 return ( new AdvancedFieldsCb() )->get_fields();
 			default:
