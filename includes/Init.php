@@ -97,17 +97,4 @@ class Init {
 		];
 		return $classes;
 	}
-
-	/**
-	 * Get Filter classes.
-	 *
-	 * @return array
-	 */
-	private static function get_filter_classes() {
-
-		$classes = [
-			Controllers\Filters\Admin\AuthorSocialMeta::class,
-		];
-		return $classes;
-	}
 }
