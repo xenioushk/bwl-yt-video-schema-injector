@@ -29,7 +29,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 /**
- * Function to handle the initialization of the Advanced FAQ Manager
+ * Function to handle the initialization of the plugin.
  *
  * @return mixed
  */
