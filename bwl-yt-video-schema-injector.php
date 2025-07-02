@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BWL YouTube Video Schema Injector
  * Plugin URI: https://bluewindlab.net
- * Description: Injects schema markup for YouTube videos in WordPress posts, pages, and custom post types.
+ * Description: Injects schema markup for YouTube videos in WordPress posts, pages, or custom post types.
  * Author: BlueWindLab
  * Version: 1.0.0
  * Author URI: https://bluewindlab.net
