@@ -45,7 +45,7 @@ class YtSchemaInjectorCb {
 
 		$status = in_array( $current_cpt, $allowed_cpts,true );
 
-		return intval( $status );
+		return intval( $status ) ? $current_cpt : '';
 
 	}
 
